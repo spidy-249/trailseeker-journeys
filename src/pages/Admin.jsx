@@ -16,7 +16,7 @@ export default function Admin() {
   const [settingsForm, setSettingsForm] = useState({});
 
   // ⚠️ UPDATE THIS TO YOUR LIVE RENDER URL BEFORE PUSHING TO GITHUB! ⚠️
-  const API_BASE_URL = 'http://trailseeker-api.onrender.com/api'; 
+  const API_BASE_URL = 'https://trailseeker-api.onrender.com/api'; 
 
   // --- LOGIN HANDLER ---
   const handleLogin = (e) => {
