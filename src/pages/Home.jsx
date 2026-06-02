@@ -58,7 +58,7 @@ const HeroSection = ({ setIsMenuOpen }) => (
       </p>
       <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
         <Link to="/treks" className="bg-[#D35D47] text-white py-4 px-8 font-bold tracking-wider rounded-sm hover:bg-[#b84c38] transition-colors flex items-center justify-center gap-2">
-          EXPLORE EXPEDITIONS <span className="text-xl">→</span>
+          EXPLORE TRAILS <span className="text-xl">→</span>
         </Link>
         <a href="#plan" className="border-2 border-white text-center text-white py-4 px-8 font-bold tracking-wider rounded-sm hover:bg-white/10 transition-colors">
           PLAN A CUSTOM TREK
@@ -134,7 +134,7 @@ const ContactSection = ({ settings }) => {
     setStep('processing');
 
     try {
-      const response = await fetch('http://localhost:5001/api/bookings', {
+      const response = await fetch('https://trailseeker-api.onrender.com/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -155,7 +155,7 @@ const ContactSection = ({ settings }) => {
   // Handle simple inquiries
   const handleInquirySubmit = async (e) => {
     e.preventDefault();
-    await fetch('http://localhost:5001/api/inquiries', {
+    await fetch('https://trailseeker-api.onrender.com/api/inquiries', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
@@ -368,7 +368,7 @@ export default function Home() {
 
   // Fetch company settings from backend on load
   useEffect(() => {
-    fetch('http://localhost:5001/api/settings')
+    fetch('https://trailseeker-api.onrender.com/api/settings')
       .then(res => res.json())
       .then(data => setSettings(data))
       .catch(err => console.error("Error fetching settings:", err));
